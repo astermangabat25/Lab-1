@@ -17,10 +17,7 @@
                 <button type="submit">Log Out</button>
             </form>
             {% else %}
-            <form method="post" action="{% url 'login' %}">
-                {% csrf_token %}
-                <button type="submit">Log In</button>
-            </form>
+            <a href="{% url 'login' %}">Log In</a>
             {% endif %}
             {% block content %}{% endblock %}
         </div>

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
-from .models import Recipe, RecipeIngredient, Profile, Ingredient
+from .models import Recipe, RecipeIngredient, Profile
 # Register your models here.
 class RecipeIngredientInline(admin.TabularInline):
     model = RecipeIngredient
