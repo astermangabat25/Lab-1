@@ -14,12 +14,12 @@
             {% if request.user.is_authenticated %}
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
-                <button type="submit">logout</button>
+                <button type="submit">Log Out</button>
             </form>
             {% else %}
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
-                <button type="submit">login</button>
+                <button type="submit">Log In</button>
             </form>
             {% endif %}
             {% block content %}{% endblock %}
