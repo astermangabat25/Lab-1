@@ -1,29 +1,29 @@
-<html>
-    <head>
-        <title>Log In</title>
-        <style>
-            h1{
-                text-align: center;
-            }
-            form{
-                width: 50%;
-                margin: 0 auto;
-                display: grid;
-                grid-template-rows: repeat(3, 1fr);
-                justify-content: center;
-                align-items: center;
-                justify-items: center;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Login</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="login">Log In</button>
-            <a href="{% url 'password_reset' %}">Forgot your password?</a>
-        </form>
-    </body>
-</html>
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}Log In{% endblock %}
+{% block page_title %}Log In{% endblock %}
+{% block styles %}
+<style>
+    h1{
+        text-align: center;
+    }
+    form{
+        width: 50%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="login">Log In</button>
+    <a href="{% url 'password_reset' %}">Forgot your password?</a>
+</form>
+{% endblock %}
 

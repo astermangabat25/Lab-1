@@ -3,8 +3,17 @@
 {% block title %}Recipe Book{% endblock %}
 {% block page_title %}Recipe List{% endblock %}
 {% block content %}
+{% if request.user.is_authenticated %}
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log Out</button>
+</form>
+{% else %}
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+<form action=""></form>
 <ul>
-    {% for recipes in object_list %}
+    {% for recipes in recipes %}
     <li>
         <a href="{{recipes.get_absolute_url}}">
             {{recipes}}
@@ -12,5 +21,5 @@
     </li>
     {% endfor %}
 </ul>
-
+<a href="/recipe/add">Create a new recipe!</a>
 {% endblock %}

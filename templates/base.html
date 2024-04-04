@@ -11,14 +11,6 @@
                 <h1>Recipe Book</h1>
                 <h2>You are viewing: {% block page_title %}{% endblock %}</h2>
             </header>   
-            {% if request.user.is_authenticated %}
-            <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit">Log Out</button>
-            </form>
-            {% else %}
-            <a href="{% url 'login' %}">Log In</a>
-            {% endif %}
             {% block content %}{% endblock %}
         </div>
         {% block scripts %}{% endblock %}
