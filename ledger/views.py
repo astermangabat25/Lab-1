@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -63,8 +64,7 @@ class RecipeAddImageView(LoginRequiredMixin, CreateView):
     form_class = ImageForm
 
     def get_success_url(self):
-        pk = self.kwargs["pk"]
-        return reverse('ledger:recipe', kwargs={"pk": pk})
+        return reverse_lazy('ledger:recipe', kwargs={'pk': self.object.recipe.pk})
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
