@@ -3,14 +3,6 @@
 {% block title %}Recipe Book{% endblock %}
 {% block page_title %}Recipe List{% endblock %}
 {% block content %}
-{% if request.user.is_authenticated %}
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">Log Out</button>
-</form>
-{% else %}
-<a href="{% url 'login' %}">Log In</a>
-{% endif %}
 <form action=""></form>
 <ul>
     {% for recipes in recipes %}

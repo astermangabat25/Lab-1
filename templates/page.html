@@ -3,14 +3,6 @@
 {% block title %}Recipe{% endblock %}
 {% block page_title %}Recipe Details{% endblock %}
 {% block content %}
-{% if request.user.is_authenticated %}
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">Log Out</button>
-</form>
-{% else %}
-<a href="{% url 'login' %}">Log In</a>
-{% endif %}
 <ul>
     {% for image in recipe.images.all %}
         <img src="{{ image.recipe_images.url }}" alt="image.description">
