@@ -1,7 +1,6 @@
 from django import forms
-from django.forms import inlineformset_factory
 
-from .models import RecipeIngredient, Recipe, RecipeImage
+from .models import Recipe, RecipeImage
 
 
 class RecipeForm(forms.ModelForm):

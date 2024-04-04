@@ -46,11 +46,6 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
     model = Recipe
     template_name = 'page.html'
 
-    def get_context_data(self, **kwargs):
-        ctx = super().get_context_data(**kwargs)
-        ctx['recipe_pk'] = self.kwargs['pk']
-        return ctx
-
 
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe

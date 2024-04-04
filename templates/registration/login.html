@@ -5,18 +5,6 @@
 {% block page_type %}login{% endblock %}
 {% block styles %}
 <style>
-    h1{
-        text-align: center;
-    }
-    form{
-        width: 50%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-    }
 </style>
 {% endblock %}
 {% block content %}
@@ -24,6 +12,7 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="login">Log In</button>
+    <br>
     <a href="{% url 'password_reset' %}">Forgot your password?</a>
 </form>
 {% endblock %}

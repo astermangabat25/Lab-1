@@ -45,7 +45,7 @@ class RecipeIngredient(models.Model):
 
 
 class RecipeImage(models.Model):
-    recipe_images = models.ImageField(upload_to="images/", null=True)
+    image = models.ImageField(upload_to="images/", null=False)
     description = models.TextField(max_length=255)
     recipe = models.ForeignKey(
         'Recipe',
