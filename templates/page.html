@@ -2,6 +2,15 @@
 {% load static %}
 {% block title %}Recipe{% endblock %}
 {% block page_title %}Recipe Details{% endblock %}
+{% block styles %}
+<style>
+    img{
+        max-width: 500px;
+        max-height: 500px;
+        padding: 2;
+    }
+</style>
+{% endblock %}
 {% block content %}
 <ul>
     <h2>{{ recipe.name }}</h2>

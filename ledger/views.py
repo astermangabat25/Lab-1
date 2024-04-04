@@ -65,3 +65,7 @@ class RecipeAddImageView(LoginRequiredMixin, CreateView):
         ctx = super().get_context_data(**kwargs)
         ctx['recipe_pk'] = self.kwargs['pk']
         return ctx
+
+    def form_valid(self, form):
+        form.instance.recipe = Recipe.objects.get(pk=self.kwargs["pk"])
+        return super().form_valid(form)
